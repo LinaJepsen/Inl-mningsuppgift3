@@ -11,101 +11,117 @@
     <h1>DC Quiz</h1>
     <button id="darkMode">Change to Batman mode</button>
     <button id="lightMode">Change to Superman mode</button>
-    <!--Question 1 -->
+
     <h3>1: Is Flash the fastest superhero in the DC universe? True</h3>
     <div>
-      <input type="radio" id="flashTrue" name="quest1" />
-      <label for="quest1">True</label>
+      <input type="radio" id="flashTrue" name="quest1" value="correct" />
+      <label for="flashTrue">True</label>
     </div>
     <div>
-      <input type="radio" id="flashFalse" name="quest1" />
-      <label for="quest1">False</label>
+      <input type="radio" id="flashFalse" name="quest1" value="wrong" />
+      <label for="flashFalse">False</label>
     </div>
-    <!--Question 2 -->
+
     <h3>2: Is Spiderman published by DC Comics? False</h3>
     <div>
-      <input type="radio" id="spidermanTrue" name="quest2" />
-      <label for="quest2">True</label>
+      <input type="radio" id="spidermanTrue" name="quest2" value="wrong" />
+      <label for="spidermanTrue">True</label>
     </div>
     <div>
-      <input type="radio" id="spidermanFalse" name="quest2" />
-      <label for="quest2">False</label>
+      <input type="radio" id="spidermanFalse" name="quest2" value="correct" />
+      <label for="spidermanFalse">False</label>
     </div>
-    <!--Question 3 -->
+
     <h3>3: Is Aquaman one of the founding members of Justice League? True</h3>
     <div>
-      <input type="radio" id="aquamanTrue" name="quest3" />
-      <label for="quest3">True</label>
+      <input type="radio" id="aquamanTrue" name="quest3" value="correct" />
+      <label for="aquamanTrue">True</label>
     </div>
     <div>
-      <input type="radio" id="aquamanFalse" name="quest3" />
-      <label for="quest3">False</label>
+      <input type="radio" id="aquamanFalse" name="quest3" value="wrong" />
+      <label for="aquamanFalse">False</label>
     </div>
-    <!--Question 4 -->
+
     <h3>4: Who is the founder of DC Comics?</h3>
     <div>
-      <input type="radio" id="founder1" name="DCFounder" />
+      <input type="radio" id="founder1" name="DCFounder" value="wrong" />
       <label for="founder1">Louis D'Esposito</label>
     </div>
     <div>
-      <input type="radio" id="founder2" name="DCFounder" />
+      <input type="radio" id="founder2" name="DCFounder" value="correct" />
       <label for="founder2">Malcolm Wheeler-Nicholson(rätt)</label>
     </div>
     <div>
-      <input type="radio" id="founder3" name="DCFounder" />
+      <input type="radio" id="founder3" name="DCFounder" value="wrong" />
       <label for="founder3">Stan Lee</label>
     </div>
-    <!--Question 5 -->
+
     <h3>5: Who was DC Comics first superhero?</h3>
     <div>
-      <input type="radio" id="choice1" name="firstSuperhero" />
+      <input type="radio" id="choice1" name="firstSuperhero" value="correct" />
       <label for="choice1">Superman(rätt)</label>
     </div>
     <div>
-      <input type="radio" id="choice2" name="firstSuperhero" />
+      <input type="radio" id="choice2" name="firstSuperhero" value="wrong" />
       <label for="choice2">Wonder Woman</label>
     </div>
     <div>
-      <input type="radio" id="choice3" name="firstSuperhero" />
+      <input type="radio" id="choice3" name="firstSuperhero" value="wrong" />
       <label for="choice3">Batman</label>
     </div>
-    <!--Question 6 -->
-    <h3>6: What is Catwomans real name?</h3>
+
+    <h3>6: What is Catwoman's real name?</h3>
     <div>
-      <input type="radio" id="catwoman1" name="catwoman" />
+      <input type="radio" id="catwoman1" name="catwoman" value="wrong" />
       <label for="catwoman1">Barbara Gordon</label>
     </div>
     <div>
-      <input type="radio" id="catwoman2" name="catwoman" />
+      <input type="radio" id="catwoman2" name="catwoman" value="correct" />
       <label for="catwoman2">Selina Kyle (rätt)</label>
     </div>
     <div>
-      <input type="radio" id="catwoman3" name="catwoman" />
+      <input type="radio" id="catwoman3" name="catwoman" value="wrong" />
       <label for="catwoman3">Vicki Vale</label>
     </div>
-    <!--Question 7 -->
+
     <h3>
-      7: Which of these are Batmans vehicles? There may be more than one right
+      7: Which of these are Batman's vehicles? There may be more than one right
       answer.
     </h3>
     <div>
-      <input type="checkbox" name="batmanVehicles" id="check1" />
-      <label for="batmanVehicles">Batboat(rätt)</label>
+      <input
+        type="checkbox"
+        name="batmanVehicles"
+        id="check1"
+        value="correct"
+      />
+      <label for="check1">Batboat(rätt)</label>
     </div>
     <div>
-      <input type="checkbox" name="batmanVehicles" id="check1" />
-      <label for="batmanVehicles">Batcycle(rätt)</label>
+      <input
+        type="checkbox"
+        name="batmanVehicles"
+        id="check2"
+        value="correct"
+      />
+      <label for="check2">Batcycle(rätt)</label>
     </div>
     <div>
-      <input type="checkbox" name="batmanVehicles" id="check1" />
-      <label for="batmanVehicles">Battank(fel)</label>
+      <input type="checkbox" name="batmanVehicles" id="check3" value="wrong" />
+      <label for="check3">Battank(fel)</label>
     </div>
     <div>
-      <input type="checkbox" name="batmanVehicles" id="check1" />
-      <label for="batmanVehicles">Batmobile(rätt)</label>
+      <input
+        type="checkbox"
+        name="batmanVehicles"
+        id="check4"
+        value="correct"
+      />
+      <label for="check4">Batmobile(rätt)</label>
     </div>
 
     <button id="resultBtn">Get results!</button>
+    <div id="results"></div>
     <script src="inlämninsuppgift3.js"></script>
   </body>
 </html>
