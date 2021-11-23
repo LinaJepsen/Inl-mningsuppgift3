@@ -1,3 +1,19 @@
+button {
+  background-color: palevioletred;
+  color: white;
+  padding: 7px;
+  font-size: 15px;
+  border: black;
+}
+#resultBtn {
+  margin-top: 10px;
+}
+
+#reload {
+  margin-top: 10px;
+}
+
 h1 {
-  /*vill sätta i mitten*/
+  border-bottom: black solid;
+  text-align: center;
 }

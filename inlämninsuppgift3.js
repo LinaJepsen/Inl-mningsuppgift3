@@ -1,6 +1,7 @@
 //change colors of the document
 let darkMode = document.querySelector("#darkMode");
 let lightMode = document.querySelector("#lightMode");
+let normalMode = document.querySelector("#normalMode");
 let body = document.querySelector("body");
 let DCQuiz = document.querySelector("h1");
 let text = document.querySelectorAll("div");
@@ -29,47 +30,25 @@ lightMode.addEventListener("click", () =>{
     DCQuiz.style.color ="#F53F36"
 });
 
-//Right answers 
-/*
+normalMode.addEventListener("click", () =>{
+    body.style.backgroundColor = "#FFFFFF";
+    let changeColor = document.querySelectorAll("h3");
+    changeColor.forEach((h3)=>{
+        h3.style.color = "#000000";
+    });
+    text.forEach((div)=>{
+        div.style.color = "#000000"
+    });
+    DCQuiz.style.color ="#000000"
+});
 
-let answers = [
-    {
-        rightAnswer1: true,
-        wrongAnswer1: true
-        
-    },
-    {
-        rightAnswer2: true,
-        wrongAnswer2: true
-        
-    },
-    {
-        rightAnswer3: true
-    },
-    {
-        rightAnswer4: "Malcolm Wheeler-Nicholson"
-    },
-    {
-        rightAnswer5: "Superman"
-    },
-    {
-        rightAnswer6: "Selina Kyle"
-    },
-    {
-        rightAnswer7: "Batboat",
-        rightAnswer7: "Batcycle",
-        rightAnswer7: "Batmobile"
-    }
-];*/
-
-//collect answers
+//functions for all answers
 
 let submitBtn = document.querySelector("#resultBtn");
 let result = document.querySelector("#results");
-let inputValue = document.querySelectorAll("input[name = 'quest1']");
 
-let rightAnswers = [];
-let wrongAnswers = [];
+let rightAnswers = []; //empty array for right answers
+let wrongAnswers = []; //empty array for wrong answers
 
 function quest1 () {
     let flashTrue = document.getElementById("flashTrue");
@@ -157,7 +136,7 @@ function quest7 () {
     if (check1.checked == true && check2.checked == true && check4.checked == true)
     rightAnswers.push(1);
     else 
-    wrongAnswers.push(1);
+        wrongAnswers.push(1);
 }
 
 submitBtn.addEventListener("click", () =>{
@@ -168,115 +147,33 @@ submitBtn.addEventListener("click", () =>{
     quest5()
     quest6()
     quest7()
+   
+    if (rightAnswers.length == 7){
+        result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! You're a true DC-fan!</p>"
+        result.style.color = "green";
+    } else if (rightAnswers.length >= 4 && rightAnswers.length < 7){
+        result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! You need to read more DC-comics!</p>"
+        result.style.color = "orange";
+    } else if (rightAnswers.length < 4){
+        result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! Are you a Marvel-fan?</p>"
+        result.style.color = "red";
+    } 
     console.log(rightAnswers);
     console.log(wrongAnswers);
 });
 
-/* Denna funkar på ett svar
+//function and button to reload the page
 
-submitBtn.addEventListener("click", () =>{
-    let answerFilter = "";
-    inputValue.forEach((btn)=>{
-        if(btn.checked){
-            //result.innerHTML = "<p>You choosed " + btn.value + "</p>"
-            answerFilter = btn.value;
-            //console.log(btn);
-        } 
-    });
-
-    let userAnswers = []; //tom array med rätt svar
-    let wrongAnswers = []; //tom array med fel
-
-    if(answerFilter === "true"){
-        userAnswers = answers.filter((item) => item.rightAnswer1 === true);
-    } else if (answerFilter === "false"){
-        wrongAnswers = answers.filter((item)=> item.wrongAnswer1 === true);
-    }
-
-    userAnswers.forEach((item)=>{
-        console.log(userAnswers);
-        result.innerHTML = "<p>You got " + userAnswers.length + " points out of 7 </p>"
-    });
-    wrongAnswers.forEach((item) =>{
-        console.log(wrongAnswers);
-        result.innerHTML = "<p>you got " + wrongAnswers.length + " minus points</p>"
-    })
-    
-});*/
-/*
-Test 2 - funkar inte riktigt med på god väg
-let correct;
-let wrong;
-
-let getAnswers = () =>{
-    var input = document.getElementsByTagName("input")
-    for (var i=0; i<input.length; i++){
-        if (input[i].value==="correct"){
-            if(input[i].checked===true){
-                correct++;
-            }
-        } else (input[i].value === "wrong")
-        if(input[i].checked === true){
-            wrong++;
-        }
-        
-        
-       // if(i==input.length)correct = 0;
-        
-    }
-    if (correct === 7) {
-        console.log("100%")
-    } else if (correct >= 5 && correct < 7){
-        console.log("You got 50%")
-    } else (correct < 5)
-    console.log("you got less than 50%")
-};
-
-submitBtn.addEventListener("click",() =>{
-    getAnswers();
-})*/
-
-/* Denna funkar, ränkar antal rätt svar i consolen, men förstår ej riktigt. 
-Array.from(document.querySelectorAll('input[type = radio]')).forEach(item=>{
-    item.addEventListener("click", e =>{
-        let correct = document.querySelectorAll('input[type=radio][value=correct]:checked').length
-        console.log(correct)
-    })
-})*/
-
-
-
-
-
-
-/*let resultBtn = document.querySelector("#resultBtn");
-resultBtn.addEventListener("click",()=>{
-    let checkAnswers = () => {
-        var inputValue = document.querySelectorAll("[name = 'quest1']").value;
-        var correctAnswer = "true";
-    
-        if (inputValue === correctAnswer){
-            console.log("true");
-        } else {
-            console.log("false");
-        }
-    }
-});*/
-
-/*let checkAnswers = () => {
-   
-        if (inputValue === answers.rightAnswer1){
-            console.log("true");
-           
-        } else (inputValue !== answers.rightAnswer1)
-        console.log("false");
-    
+let reload = document.querySelector("#reload");
+function reloadPage () {
+    window.location.reload();
 }
 
-submitBtn.addEventListener("click", () =>{
-    checkAnswers();
+reload.addEventListener("click", ()=>{
+    reloadPage()
+});
 
-});*/
+
 
 
 
