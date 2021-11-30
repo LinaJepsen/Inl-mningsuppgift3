@@ -15,7 +15,8 @@ darkMode.addEventListener("click", ()=>{
     text.forEach((div)=>{
         div.style.color = "#F9F762"
     });
-    DCQuiz.style.color ="#F9F762"
+    DCQuiz.style.color ="#F9F762";
+    DCQuiz.style.borderBottom = "yellow solid";
 });
 
 lightMode.addEventListener("click", () =>{
@@ -28,6 +29,7 @@ lightMode.addEventListener("click", () =>{
         div.style.color = "#F53F36"
     });
     DCQuiz.style.color ="#F53F36"
+    DCQuiz.style.borderBottom = "red solid";
 });
 
 normalMode.addEventListener("click", () =>{
@@ -40,6 +42,7 @@ normalMode.addEventListener("click", () =>{
         div.style.color = "#000000"
     });
     DCQuiz.style.color ="#000000"
+    DCQuiz.style.borderBottom = "black solid";
 });
 
 //functions for all answers
@@ -60,8 +63,7 @@ function quest1 () {
     else if (flashFalse.checked == true){
         wrongAnswers.push(1);
     }
-    else 
-    alert("Please answer all questions!");
+    
 }
 
 function quest2 () {
@@ -72,8 +74,7 @@ function quest2 () {
     wrongAnswers.push(1);
     else if (spidermanFalse.checked == true)
     rightAnswers.push(1);
-    else
-    alert("Please answer all questions!")
+    
 }
 
 function quest3 () {
@@ -84,8 +85,7 @@ function quest3 () {
     rightAnswers.push(1);
     else if (aquamanFalse.checked == true)
     wrongAnswers.push(1);
-    else
-    alert("Please answer all questions!");
+    
 }
 
 function quest4 () {
@@ -97,8 +97,7 @@ function quest4 () {
     wrongAnswers.push(1);
     else if ( founder2.checked == true)
     rightAnswers.push(1);
-    else 
-    alert ("Please answer all questions!")
+  
 }
 
 function quest5 () {
@@ -110,8 +109,7 @@ function quest5 () {
     rightAnswers.push(1);
     else if (choice2.checked == true || choice3.checked == true)
     wrongAnswers.push(1);
-    else 
-    alert("Please answer all questions!")
+    
 }
 
 function quest6 () {
@@ -123,8 +121,7 @@ function quest6 () {
     rightAnswers.push(1);
     else if (catwoman1.checked == true || catwoman3.checked == true)
     wrongAnswers.push(1);
-    else 
-    alert("Please answer all questions!")
+    
 }
 
 function quest7 () {
@@ -139,27 +136,30 @@ function quest7 () {
         wrongAnswers.push(1);
 }
 
+//get the result
 submitBtn.addEventListener("click", () =>{
-    quest1()
-    quest2()
-    quest3()
-    quest4()
-    quest5()
-    quest6()
-    quest7()
-   
-    if (rightAnswers.length == 7){
-        result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! You're a true DC-fan!</p>"
-        result.style.color = "green";
-    } else if (rightAnswers.length >= 4 && rightAnswers.length < 7){
-        result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! You need to read more DC-comics!</p>"
-        result.style.color = "orange";
-    } else if (rightAnswers.length < 4){
-        result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! Are you a Marvel-fan?</p>"
-        result.style.color = "red";
-    } 
-    console.log(rightAnswers);
-    console.log(wrongAnswers);
+    
+        quest1()
+        quest2()
+        quest3()
+        quest4()
+        quest5()
+        quest6()
+        quest7()
+       
+                if (rightAnswers.length == 7){
+                    result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! You're a true DC-fan!</p>"
+                    result.style.color = "green";
+                } else if (rightAnswers.length >= 4 && rightAnswers.length < 7){
+                    result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! You need to read more DC-comics!</p>"
+                    result.style.color = "orange";
+                } else if (rightAnswers.length < 4){
+                    result.innerHTML = "<p>You got " + rightAnswers.length + " out of 7! Are you a Marvel-fan?</p>"
+                    result.style.color = "red";
+                }
+
+                rightAnswers = []; 
+                wrongAnswers = [];
 });
 
 //function and button to reload the page
@@ -172,6 +172,7 @@ function reloadPage () {
 reload.addEventListener("click", ()=>{
     reloadPage()
 });
+
 
 
 
